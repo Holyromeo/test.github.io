@@ -1,3 +1,5 @@
+const ENTER_KEYCODE = 13;
+const SPACE_KEYCODE = 32;
 let audioCont = document.getElementsByClassName('audio-hud');
 let audioPlayer = document.getElementById('audio-player');
 let progressBar = document.getElementById('audio-hud__progress-bar');
@@ -26,7 +28,14 @@ function audioAct() {
 	}
 }
 
+function onPressActionButton(evt) {
+	if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
+		audioAct();
+	}
+}
+
 actionButton.addEventListener('click',audioAct);
+actionButton.addEventListener('keydown',onPressActionButton);
 
 function audioTime(time) {
 	time = Math.floor(time);
@@ -127,8 +136,22 @@ function speedActUp() {
   }
 }
 
+function onPressSpeedDown(evt) {
+	if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
+		speedActDown();
+	}
+}
+
+function onPressSpeedUp(evt) {
+	if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
+		speedActUp();
+	}
+}
+
 speedDown.addEventListener('click',speedActDown);
 speedUp.addEventListener('click',speedActUp);
+speedDown.addEventListener('keydown',onPressSpeedDown);
+speedUp.addEventListener('keydown',onPressSpeedUp);
 currSpeed.innerHTML = audioPlayer.playbackRate + 'x';
 
 function audioChangeVolume() {
@@ -146,5 +169,12 @@ function getVolumeSpin() {
 	);
 }
 
+function onPressVolumeSpin(evt) {
+	if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
+		getVolumeSpin();
+	}
+}
+
 volumeChange.addEventListener('click',getVolumeSpin);
+volumeChange.addEventListener('keydown',onPressVolumeSpin);
 volumeScale.addEventListener('change',audioChangeVolume);
