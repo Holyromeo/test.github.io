@@ -1,0 +1,235 @@
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.player {
+	position: relative;
+	background: #ffffff;
+	width:80%;
+	color:#404040;
+	border: 2px solid #404040;
+	border-radius: 15px;
+}
+
+.audio-player {
+	width: 100%;
+	margin: 0;
+}
+
+.trackname {
+	display: inline-block;
+	margin: 20px 0 20px 100px;
+	padding: 0;
+	width: 70%;
+	text-transform: uppercase;
+}
+
+.player__download {
+	position: absolute;
+	top: 12px;
+	left: 27px;
+  width: 20px;
+	height: 20px;
+}
+
+/* .player__download::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: -7px;
+  left: 30px;
+  background-image: url("../img/dowload.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+} */
+
+.audio-hud {
+	margin:0;
+	padding-bottom: 10px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.audio-hud__element {
+	cursor:pointer;
+	display:inline-block;
+	height:30px;
+}
+
+.audio-hud__container {
+	width: 70%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.audio-hud__curr-time,
+.audio-hud__time-remain,
+.audio-hud__curr-speed {
+	margin-top: 10px;
+}
+
+.audio-hud__progress-bar {
+	height: 5px;
+	width: 70%;
+	background-color: black;
+}
+
+.audio-hud__curr-speed {
+	min-width: 4%;
+}
+
+.audio-hud__action {
+  width:30px;
+}
+
+.audio-hud__action_play {
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.audio-hud__action_play::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url("../img/play.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.audio-hud__action_pause {
+  width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.audio-hud__action_pause::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  left: -10px;
+  width: 50px;
+  height: 50px;
+  background-image: url("../img/pause.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.audio-hud__speaker {
+	width: 30px;
+	height: 30px;
+	position: relative;
+}
+
+.audio-hud__speaker::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: 1px;
+  left: 1px;
+  background-image: url("../img/speaker.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+button {
+	width: 30px;
+	height: 30px;
+	position: relative;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+.audio-hud__speed-down::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: 1px;
+  left: 1px;
+  background-image: url("../img/arrow.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.audio-hud__speed-up::before {
+	content: "";
+  position: absolute;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  top: 1px;
+  left: 1px;
+  background-image: url("../img/arrow.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+	-webkit-transform: rotate(180deg);
+	    -ms-transform: rotate(180deg);
+	        transform: rotate(180deg);
+}
+
+input[type="range"] {
+	overflow: hidden;
+	width: 5%;
+	height: 3px;
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	border: 1px solid #404040;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	height: 5px;
+	-webkit-appearance: none;
+	color: #404040;
+	margin-top: -1px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+	width: 2px;
+	-webkit-appearance: none;
+	height: 10px;
+	cursor: pointer;
+	border: 1px solid green;
+	-webkit-box-shadow: -50px 0 0 50px #404040;
+	        box-shadow: -50px 0 0 50px #404040;
+}

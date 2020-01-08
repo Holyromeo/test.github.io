@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Тестовое задание - проигрыватель</title>
+  <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+	  <h1 class="visually-hidden">Аудио проигрыватель</h1>
+    <section class="player">
+			<audio class="player__element audio-player" id="audio-player" preload="metadata">
+				<source src="audio/Scorpions-Wind_Of_Change.mp3">
+				<source src="audio/Scorpions-Wind_Of_Change.ogg">
+				Тег audio не поддерживается вашим браузером.
+			</audio>
+			<a class="player__element player__download visually-hidden" id="player__download" title="Скачать" href="#" download>
+				<img src="img/dowload.png" width = "35px" height = "35px">
+			</a>
+			<p class="player__element trackname">Название трека</p>
+			<div class="audio-container__element audio-hud">
+				<div class="audio-hud__element audio-hud__container">
+					<div class="audio-hud__element audio-hud__action audio-hud__action_play" id="audio-hud__action"></div>
+					<div class="audio-hud__element audio-hud__curr-time" title="Времени прошло" id="audio-hud__curr-time">00:00</div>
+					<progress value="0" max="100" class="audio-hud__element audio-hud__progress-bar" title="Прогресс" id="audio-hud__progress-bar"></progress>
+					<div class="audio-hud__element audio-hud__time-remain" title="Времени осталось" id="audio-hud__time-remain">00:00</div>
+					<div class="audio-hud__element audio-hud__curr-speed" title="Скорость воспроизведения" id="audio-hud__curr-speed">1x</div>
+				</div>
+				<input type="range" value="100" max="100" title="Уровень громкость" class="audio-hud__element audio-hud__volume visually-hidden" id="audio-hud__volume">
+				<div class="audio-hud__element audio-hud__speaker" title="Громкость" id="audio-hud__speaker"></div>
+				<button class="audio-hud__element audio-hud__speed-down" title="Уменьшить скорость воспроизведения" id="audio-hud__speed-down"></button>
+				<button class="audio-hud__element audio-hud__speed-up" title="Увеличить скорость воспроизведения" id="audio-hud__speed-up"></button>
+			</div>
+    </section>
+	<script src="js/script.js"></script>
+  </body>
+</html>
